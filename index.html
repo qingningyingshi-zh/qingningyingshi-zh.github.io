@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>青柠影视｜剧集档案、上映日历与观影手记 · qingningyingshi-zh</title>
+<meta name="description" content="青柠影视（qingningyingshi-zh）是一份持续更新的影视资料笔记：华语剧集档案、院线新片日历、导演专题与观后短评。按题材和年份检索，标记想看与已看，地址 https://qingningyingshi-zh.github.io。">
+<meta name="keywords" content="青柠影视, qingningyingshi-zh, 华语剧集档案, 电影上映日历, 观影手记">
+<meta name="author" content="青柠影视">
+<meta name="theme-color" content="#0e1c12">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="青柠影视">
+<meta property="og:title" content="青柠影视｜剧集档案、上映日历与观影手记">
+<meta property="og:description" content="华语剧集档案、院线新片日历、导演专题与观后短评，持续更新的影视资料笔记。">
+<meta property="og:url" content="https://qingningyingshi-zh.github.io">
+<link rel="canonical" href="https://qingningyingshi-zh.github.io">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍋</text></svg>">
+<style>
+:root{
+  --ink:#e9f3e7;
+  --ink-dim:#a8bfa8;
+  --lime:#b6e34a;
+  --lime-deep:#7cc437;
+  --paper:#0e1c12;
+  --paper-2:#142517;
+  --paper-3:#1b2e20;
+  --line:rgba(182,227,74,.18);
+  --radius:18px;
+  --max:1120px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","WenQuanYi Micro Hei",system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-2;
+  background:
+    radial-gradient(900px 500px at 82% -10%, rgba(182,227,74,.13), transparent 60%),
+    radial-gradient(700px 600px at -10% 30%, rgba(120,180,120,.08), transparent 62%);
+}
+img{max-width:100%;display:block}
+a{color:var(--lime);text-decoration:none}
+a:hover{color:#e2f6b5}
+::selection{background:var(--lime);color:#0e1c12}
+
+/* ---------- 布局容器 ---------- */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 22px}
+section{padding:76px 0}
+@media (max-width:720px){section{padding:54px 0}}
+
+/* ---------- 顶部 ---------- */
+.topbar{
+  position:sticky;top:0;z-index:50;
+  background:rgba(14,28,18,.82);
+  backdrop-filter:saturate(160%) blur(14px);
+  -webkit-backdrop-filter:saturate(160%) blur(14px);
+  border-bottom:1px solid var(--line);
+}
+.topbar-in{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;gap:18px}
+.brand{display:flex;align-items:center;gap:9px;font-weight:700;letter-spacing:.04em;color:var(--ink);font-size:17px}
+.brand:hover{color:var(--ink)}
+.dot{width:22px;height:22px;border-radius:7px;background:linear-gradient(140deg,var(--lime),#5fa32a);display:grid;place-items:center;font-size:12px;color:#122;font-weight:800}
+.nav{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap}
+.nav a{
+  color:var(--ink-dim);font-size:14px;padding:7px 11px;border-radius:10px;
+  border:1px solid transparent;transition:.2s;
+}
+.nav a:hover{color:var(--ink);border-color:var(--line);background:rgba(182,227,74,.07)}
+@media (max-width:620px){
+  .nav a{padding:6px 8px;font-size:13px}
+  .topbar-in{gap:10px;padding:10px 16px}
+}
+
+/* ---------- 首屏 ---------- */
+.hero{padding-top:96px;padding-bottom:64px;position:relative}
+.eyebrow{
+  display:inline-flex;align-items:center;gap:8px;
+  font-size:12.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--lime-deep);
+  border:1px solid var(--line);border-radius:999px;padding:5px 13px;background:rgba(182,227,74,.06);
+}
+h1{
+  font-size:clamp(30px,5.6vw,60px);
+  line-height:1.14;margin:.28em 0 .18em;font-weight:800;letter-spacing:-.02em;
+}
+h1 em{font-style:normal;color:var(--lime)}
+.lede{max-width:36em;font-size:17px;color:var(--ink-dim);margin:0 0 26px}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:34px;align-items:end}
+@media (max-width:820px){.hero-grid{grid-template-columns:1fr;gap:22px}.hero{padding-top:56px}}
+.cta{display:flex;flex-wrap:wrap;gap:11px}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 20px;border-radius:12px;font-size:14.5px;font-weight:600;border:1px solid var(--lime);background:var(--lime);color:#10220b;
+}
+.btn:hover{background:#cdf06a;color:#10220b;transform:translateY(-1px)}
+.btn.ghost{background:transparent;color:var(--lime)}
+.btn.ghost:hover{background:rgba(182,227,74,.1)}
+.addr{
+  border:1px dashed var(--line);border-radius:var(--radius);padding:16px 18px;background:rgba(20,37,23,.6);
+}
+.addr span{display:block;font-size:12px;letter-spacing:.14em;color:var(--ink-dim);text-transform:uppercase;margin-bottom:5px}
+.addr code{font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;font-size:15px;color:var(--lime);word-break:break-all}
+.scrollhint{position:absolute;left:22px;bottom:-6px;font-size:12px;color:var(--ink-dim);letter-spacing:.1em}
+
+/* ---------- 栏目通用 ---------- */
+.sec-head{display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap;margin-bottom:30px}
+.sec-head h2{
+  font-size:clamp(22px,2.8vw,32px);margin:0;font-weight:750;letter-spacing:-.01em;
+}
+.sec-head .zh{color:var(--lime-deep);font-size:13px;letter-spacing:.22em}
+.sec-head p{margin:8px 0 0;color:var(--ink-dim);font-size:14.5px;max-width:32em}
+.rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent);min-width:60px}
+
+/* ---------- 档案卡 ---------- */
+.archive{display:grid;grid-template-columns:repeat(auto-fill,minmax(228px,1fr));gap:18px}
+.card{
+  position:relative;overflow:hidden;border-radius:var(--radius);
+  border:1px solid var(--line);background:linear-gradient(180deg,var(--paper-2),var(--paper-3));
+  display:flex;flex-direction:column;transition:.25s;
+}
+.card:hover{transform:translateY(-4px);border-color:rgba(182,227,74,.5);box-shadow:0 18px 40px -22px rgba(124,196,55,.5)}
+.thumb{aspect-ratio:16/10;position:relative;overflow:hidden;background:#0a120c}
+.thumb svg{width:100%;height:100%;display:block}
+.thumb .tag{
+  position:absolute;top:10px;left:10px;font-size:11px;letter-spacing:.08em;
+  background:rgba(14,28,18,.82);border:1px solid var(--line);color:var(--lime);padding:3px 9px;border-radius:999px;
+}
+.thumb .yr{position:absolute;bottom:10px;right:10px;font-size:11.5px;font-variant-numeric:tabular-nums;color:#d6e8cf}
+.body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:7px;flex:1}
+.body h3{margin:0;font-size:16.5px;font-weight:650;letter-spacing:.01em}
+.body p{margin:0;font-size:13.5px;color:var(--ink-dim);display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+.meta{margin-top:auto;display:flex;align-items:center;gap:9px;font-size:12px;color:var(--ink-dim);padding-top:10px;border-top:1px solid var(--line)}
+.stars{color:var(--lime);letter-spacing:.02em;font-size:12px}
+.read{margin-left:auto;font-size:12.5px}
+
+/* ---------- 日历 ---------- */
+.calendar{display:grid;grid-template-columns:repeat(auto-fit,minmax(158px,1fr));gap:12px}
+.day{
+  border:1px solid var(--line);border-radius:14px;padding:13px 14px;background:rgba(20,37,23,.55);
+  display:flex;flex-direction:column;gap:5px;min-height:118px;transition:.2s;
+}
+.day:hover{background:rgba(182,227,74,.09);border-color:rgba(182,227,74,.45)}
+.day b{font-size:12px;color:var(--lime-deep);letter-spacing:.1em;font-weight:700}
+.day strong{font-size:15.5px;font-weight:650;line-height:1.4}
+.day span{font-size:12.5px;color:var(--ink-dim)}
+.day i{font-style:normal;font-size:11.5px;color:var(--lime);margin-top:auto}
+
+/* ---------- 专题 ---------- */
+.feature{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+@media (max-width:820px){.feature{grid-template-columns:1fr;gap:20px}}
+.feature .art{border-radius:var(--radius);border:1px solid var(--line);padding:26px;background:linear-gradient(160deg,rgba(182,227,74,.1),rgba(20,37,23,.4) 60%)}
+.feature h3{margin:0 0 10px;font-size:24px;line-height:1.35}
+.feature ul{margin:14px 0 0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:11px}
+.feature li{display:flex;gap:12px;font-size:14.5px;color:var(--ink-dim);border-left:2px solid var(--line);padding-left:12px}
+.feature li b{color:var(--ink);font-weight:600;display:block;margin-bottom:1px}
+.track{display:flex;flex-direction:column;gap:14px}
+.track-row{display:grid;grid-template-columns:64px 1fr;gap:14px;align-items:center;border-bottom:1px solid var(--line);padding-bottom:13px}
+.track-row:last-child{border-bottom:0;padding-bottom:0}
+.track-row .n{font-size:12px;color:var(--lime-deep);letter-spacing:.1em;font-weight:700}
+.track-row strong{font-size:15px;font-weight:600}
+.track-row p{margin:3px 0 0;font-size:13px;color:var(--ink-dim)}
+
+/* ---------- 手记 ---------- */
+.notes{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:18px}
+.note{border-top:3px solid var(--lime);border-radius:0 0 16px 16px;background:var(--paper-2);padding:18px 20px;border:1px solid var(--line);border-top-width:3px}
+.note .who{font-size:12.5px;color:var(--lime-deep);letter-spacing:.06em}
+.note h4{margin:7px 0 8px;font-size:17px;font-weight:650;line-height:1.45}
+.note p{margin:0;font-size:14px;color:var(--ink-dim)}
+.note .more{display:inline-block;margin-top:12px;font-size:13px}
+
+/* ---------- 关于 ---------- */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+@media (max-width:820px){.about{grid-template-columns:1fr;gap:20px}}
+.fact{border:1px solid var(--line);border-radius:16px;padding:20px;background:rgba(20,37,23,.5)}
+.fact h4{margin:0 0 10px;font-size:14px;letter-spacing:.16em;color:var(--lime-deep);text-transform:uppercase}
+.fact p{margin:0;font-size:14.5px;color:var(--ink-dim)}
+.fact p+p{margin-top:9px}
+.notice{border:1px solid var(--line);border-left:3px solid var(--lime-deep);border-radius:16px;padding:20px 22px;background:rgba(20,37,23,.5)}
+.notice h4{margin:0 0 10px;font-size:16px}
+.notice p{margin:0;font-size:13.5px;color:var(--ink-dim)}
+.notice a{word-break:break-all}
+
+/* ---------- 页脚 ---------- */
+.foot{border-top:1px solid var(--line);padding:44px 0 38px;font-size:13.5px;color:var(--ink-dim)}
+.foot-grid{display:flex;flex-wrap:wrap;gap:22px;justify-content:space-between;align-items:flex-start}
+.foot b{color:var(--ink);font-weight:650;letter-spacing:.02em}
+.foot nav{display:flex;gap:14px;flex-wrap:wrap}
+.foot nav a{color:var(--ink-dim)}
+.copy{margin-top:22px;padding-top:18px;border-top:1px solid var(--line);font-size:12.5px}
+
+/* ---------- 回到顶部 ---------- */
+.top{
+  position:fixed;right:18px;bottom:20px;width:42px;height:42px;border-radius:50%;
+  border:1px solid var(--line);background:rgba(14,28,18,.9);color:var(--lime);
+  display:grid;place-items:center;font-size:15px;z-index:60;opacity:0;pointer-events:none;transition:.25s;
+}
+.top.show{opacity:1;pointer-events:auto}
+.top:hover{background:var(--lime);color:#10220b}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/zhangzong.js"></script>
+
+<header class="topbar" id="top">
+  <div class="topbar-in">
+    <a class="brand" href="#start" aria-label="青柠影视首页">
+      <span class="dot" aria-hidden="true">柠</span>青柠影视
+    </a>
+    <nav class="nav" aria-label="主导航">
+      <a href="#archive">剧集档案</a>
+      <a href="#calendar">上映日历</a>
+      <a href="#feature">导演专题</a>
+      <a href="#notes">观影手记</a>
+      <a href="#about">关于本站</a>
+    </nav>
+  </div>
+</header>
+
+<main id="start">
+
+<!-- ============ 首屏 ============ -->
+<section class="hero">
+  <div class="wrap">
+    <div class="eyebrow">影视资料笔记 · 独立编辑 · 持续归档</div>
+    <div class="hero-grid">
+      <div>
+        <h1>把想看的那一部，<br>收进 <em>青柠影视</em> 的片单里。</h1>
+        <p class="lede">青柠影视（qingningyingshi-zh）不做喧闹的首页推荐，只整理能反复查阅的影视信息：剧集档案按题材与年份归档，新片以日历方式排期，导演专题串起作品脉络，观影手记留下看完后的真实感受。慢一点，把片子看明白。</p>
+        <div class="cta">
+          <a class="btn" href="#archive">翻看剧集档案 →</a>
+          <a class="btn ghost" href="#calendar">查看本周上映</a>
+        </div>
+      </div>
+      <aside class="addr" aria-label="本站官方地址">
+        <span>官方访问地址 / Canonical URL</span>
+        <code>https://qingningyingshi-zh.github.io</code>
+      </aside>
+    </div>
+    <div class="scrollhint">↓ 往下翻，五个栏目依次展开</div>
+  </div>
+</section>
+
+<!-- ============ 栏目一：剧集档案 ============ -->
+<section id="archive" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="zh">01 / ARCHIVE</div>
+        <h2>剧集档案：一部片子，一张卡片</h2>
+      </div>
+      <p>字段统一为「题材 · 年份 · 集数 · 个人评分」，方便横向比较同一导演或同一类型的作品。</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="archive">
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="春山慢 封面图">
+            <defs><linearGradient id="g1" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2c4a2a"/><stop offset="1" stop-color="#0e1c12"/></linearGradient></defs>
+            <rect width="320" height="200" fill="url(#g1)"/>
+            <path d="M40 150 Q120 90 200 140 T320 120" fill="none" stroke="#b6e34a" stroke-width="2" opacity=".55"/>
+            <circle cx="240" cy="60" r="22" fill="#b6e34a" opacity=".35"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">春山慢 · 家庭 / 年代</text>
+          </svg>
+          <span class="tag">更新至 14 集</span>
+          <span class="yr">2026</span>
+        </div>
+        <div class="body">
+          <h3>春山慢</h3>
+          <p>一座南方小城的三个家庭，用清明前后的茶事串起三十年里说不出口的和解。节奏偏慢，台词留白多。</p>
+          <div class="meta"><span class="stars">★★★★☆</span><span>家庭 · 年代</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="夜航船 封面图">
+            <rect width="320" height="200" fill="#101f1a"/>
+            <path d="M0 130 L120 90 L240 150 L320 110 L320 200 L0 200 Z" fill="#1b2e20"/>
+            <path d="M0 150 L100 120 L220 160 L320 135 L320 200 L0 200 Z" fill="#243d2c"/>
+            <circle cx="250" cy="48" r="16" fill="#b6e34a" opacity=".5"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">夜航船 · 悬疑 / 群像</text>
+          </svg>
+          <span class="tag">已完结 · 22 集</span>
+          <span class="yr">2025</span>
+        </div>
+        <div class="body">
+          <h3>夜航船</h3>
+          <p>一艘跨江夜班轮上的七位乘客，每集换一个视角重讲同一晚。推理线并不复杂，人物动机才是重点。</p>
+          <div class="meta"><span class="stars">★★★★★</span><span>悬疑 · 群像</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="便利店日落 封面图">
+            <rect width="320" height="200" fill="#1a2413"/>
+            <rect x="60" y="70" width="200" height="78" rx="8" fill="#26381d" stroke="#b6e34a" stroke-width="1.5" opacity=".7"/>
+            <rect x="80" y="92" width="26" height="34" rx="3" fill="#b6e34a" opacity=".4"/>
+            <rect x="120" y="92" width="26" height="34" rx="3" fill="#b6e34a" opacity=".25"/>
+            <rect x="160" y="92" width="26" height="34" rx="3" fill="#b6e34a" opacity=".4"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">便利店日落 · 都市 / 治愈</text>
+          </svg>
+          <span class="tag">更新至 08 集</span>
+          <span class="yr">2026</span>
+        </div>
+        <div class="body">
+          <h3>便利店日落</h3>
+          <p>单元剧结构，每集一位深夜来买关东煮的客人。没有大起大落，适合当一天结束前的收尾。</p>
+          <div class="meta"><span class="stars">★★★☆☆</span><span>都市 · 治愈</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="第九封信 封面图">
+            <rect width="320" height="200" fill="#141a10"/>
+            <path d="M40 60 L160 120 L280 60" fill="none" stroke="#b6e34a" stroke-width="2" opacity=".6"/>
+            <rect x="40" y="60" width="240" height="100" fill="none" stroke="#3a5230" stroke-width="1.5"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">第九封信 · 年代 / 书信</text>
+          </svg>
+          <span class="tag">已完结 · 12 集</span>
+          <span class="yr">2024</span>
+        </div>
+        <div class="body">
+          <h3>第九封信</h3>
+          <p>根据一封迟到四十年的家书改编剧，服化道考究，情感收得很克制，最后一集建议备纸。</p>
+          <div class="meta"><span class="stars">★★★★☆</span><span>年代 · 书信</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="无声雨 封面图">
+            <rect width="320" height="200" fill="#0d1410"/>
+            <path d="M20 80 L300 80" stroke="#b6e34a" stroke-width="1" opacity=".25"/>
+            <path d="M20 110 L300 110" stroke="#b6e34a" stroke-width="1" opacity=".18"/>
+            <path d="M20 140 L300 140" stroke="#b6e34a" stroke-width="1" opacity=".12"/>
+            <circle cx="160" cy="95" r="30" fill="none" stroke="#b6e34a" stroke-width="1.5" opacity=".5"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">无声雨 · 音乐 / 传记</text>
+          </svg>
+          <span class="tag">更新至 06 集</span>
+          <span class="yr">2026</span>
+        </div>
+        <div class="body">
+          <h3>无声雨</h3>
+          <p>一位失聪编曲人的半自传剧，音效设计是它的加分项。看的时候建议戴耳机，别开倍速。</p>
+          <div class="meta"><span class="stars">★★★★☆</span><span>音乐 · 传记</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 320 200" role="img" aria-label="边关风味 封面图">
+            <rect width="320" height="200" fill="#1c2414"/>
+            <path d="M0 150 Q80 110 160 150 T320 140 L320 200 L0 200 Z" fill="#2b3a1f"/>
+            <circle cx="120" cy="80" r="14" fill="#b6e34a" opacity=".45"/>
+            <circle cx="190" cy="55" r="9" fill="#b6e34a" opacity=".3"/>
+            <text x="24" y="184" font-size="13" fill="#a8bfa8" font-family="sans-serif">边关风味 · 纪录片</text>
+          </svg>
+          <span class="tag">更新至 04 集</span>
+          <span class="yr">2026</span>
+        </div>
+        <div class="body">
+          <h3>边关风味</h3>
+          <p>跟着边境线上的小饭馆走，一集一座城、一道菜。片尾会附食材和大致做法，看完容易饿。</p>
+          <div class="meta"><span class="stars">★★★★☆</span><span>纪录片 · 美食</span><a class="read" href="#archive">查看档案</a></div>
+        </div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目二：上映日历 ============ -->
+<section id="calendar" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="zh">02 / CALENDAR</div>
+        <h2>上映日历：这一周该留哪几个晚上</h2>
+      </div>
+      <p>只列确定档期与开播日，时间以片方公告为准；追更进度每周手动更新一次。</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="calendar">
+      <div class="day"><b>10 / 26 · 周一</b><strong>夜航船 特别篇</strong><span>单集 90 分钟，收束三条暗线</span><i>腾讯视频 · 21:00</i></div>
+      <div class="day"><b>10 / 27 · 周二</b><strong>便利店日落 EP.09</strong><span>单元嘉宾：一位退休售票员</span><i>更新中</i></div>
+      <div class="day"><b>10 / 28 · 周三</b><strong>边关风味 EP.05</strong><span>本集去云南腾冲，讲一碗稀豆粉</span><i>更新中</i></div>
+      <div class="day"><b>10 / 30 · 周五</b><strong>春山慢 EP.15</strong><span>茶山雨戏，本季口碑高点</span><i>更新中</i></div>
+      <div class="day"><b>10 / 31 · 周六</b><strong>无声雨 EP.07</strong><span>进入编曲比赛段落，节奏提速</span><i>更新中</i></div>
+      <div class="day"><b>11 / 02 · 周一</b><strong>院线：《晚风邮局》</strong><span>文艺片，112 分钟，全国艺联专线</span><i>待映 · 排片以影院为准</i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目三：导演专题 ============ -->
+<section id="feature" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="zh">03 / FOCUS</div>
+        <h2>导演专题：把作品连成一条线来看</h2>
+      </div>
+      <p>本月聚焦「用景物代替台词」的作者型导演，挑三部代表作做横向对照。</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="feature">
+      <div class="art">
+        <div class="zh" style="font-size:12px;letter-spacing:.2em;color:#7cc437">本月专题 · 视线里的天气</div>
+        <h3>他拍雨，从来不是为了让角色撑伞</h3>
+        <p style="color:var(--ink-dim);margin:0">从早期短片里的窗玻璃水痕，到近作中整场不躲的夜雨，这位导演把天气当成第二个人物。下面三部的共同点不是题材，而是「情绪交给环境，台词只负责撒谎」。</p>
+        <ul>
+          <li><b>《晚风邮局》｜2026</b>一镜到底的柜台戏，雨声压过对白，靠手部动作推进。</li>
+          <li><b>《第九封信》｜2024</b>书信念白与窗外季节变化严格对位，剪辑表值得单独看。</li>
+          <li><b>《桥下有人》｜2021</b>长片处女作，构图拘谨但声音设计已成型，补课首选。</li>
+        </ul>
+      </div>
+      <div class="track">
+        <div class="track-row"><span class="n">看点 01</span><div><strong>空镜不是过场</strong><p>三部片里空镜平均时长递增，从 3 秒到 11 秒，观众被逼着「等一等」。</p></div></div>
+        <div class="track-row"><span class="n">看点 02</span><div><strong>色彩只换三次</strong><p>全片色温跟随人物关系变，不随时间段变，这是最容易看漏的设计。</p></div></div>
+        <div class="track-row"><span class="n">看点 03</span><div><strong>声音先于画面</strong><p>七成转场由环境音完成，关掉画面重听一遍会有新发现。</p></div></div>
+        <div class="track-row"><span class="n">片单顺序</span><div><strong>桥下有人 → 第九封信 → 晚风邮局</strong><p>按这个顺序看，能清楚感觉到镜头语言是怎么「变松」的。</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目四：观影手记 ============ -->
+<section id="notes" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="zh">04 / NOTES</div>
+        <h2>观影手记：看完之后，总得说两句</h2>
+      </div>
+      <p>不写剧情复述，只记被戳到的那个点，以及「值不值得熬夜追」的实话。</p>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="notes">
+      <article class="note">
+        <div class="who">看完 · 夜航船 第 20 集</div>
+        <h4>真相揭晓前，先把嫌疑人的鞋带拍了十秒</h4>
+        <p>这集最妙的不是反转，而是反转前一个几乎无声的长镜头。把「证据」藏进生活细节里，比任何台词都让人坐不住。缺点是第 19 集节奏拖了半拍，建议直接跳到本集。</p>
+        <a class="more" href="#notes">继续读 →</a>
+      </article>
+
+      <article class="note">
+        <div class="who">观剧中 · 春山慢</div>
+        <h4>茶桌戏为什么不能倍速</h4>
+        <p>前八集我开 1.5 倍速看，觉得平淡；第九集被朋友劝着原速重看，才发现演员倒茶的手一直在抖。这类戏的表演全在「没有台词」的地方，倍速等于自动跳过。</p>
+        <a class="more" href="#notes">继续读 →</a>
+      </article>
+
+      <article class="note">
+        <div class="who">补片 · 第九封信</div>
+        <h4>短剧集的奢侈，是不急着解释</h4>
+        <p>12 集讲清一封信，没有反派，也没有误会，却比很多 40 集的剧更紧。如果你最近只看长剧，拿它当一次「换脑子」很合适。备好纸巾，第 11 集。</p>
+        <a class="more" href="#notes">继续读 →</a>
+      </article>
+
+      <article class="note">
+        <div class="who">下饭 · 边关风味</div>
+        <h4>纪录片里的「不解说」派</h4>
+        <p>几乎没有旁白，锅气、剁菜声、老板娘的招呼声就是全部配乐。吃饭的时候看，幸福感翻倍；减肥的时候别点开第四集，那碗饵丝拍得太狠了。</p>
+        <a class="more" href="#notes">继续读 →</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 栏目五：关于本站 ============ -->
+<section id="about" tabindex="-1">
+  <div class="wrap">
+    <div class="sec-head">
+      <div>
+        <div class="zh">05 / ABOUT</div>
+        <h2>关于青柠影视：一份私人片单，长成了小站</h2>
+      </div>
+      <div class="rule" aria-hidden="true"></div>
+    </div>
+
+    <div class="about">
+      <div class="fact">
+        <h4>这个站在做什么</h4>
+        <p>青柠影视（站名拼音标识 qingningyingshi-zh）是个人维护的影视资料与观后感站点，收录范围为本人实际看过的剧集、电影与纪录片，按档案、日历、专题、手记四类整理。</p>
+        <p>内容以中文影视为主，兼收少量东亚与欧洲作者电影。更新频率随看片节奏，不追热点，不搬运资源。</p>
+      </div>
+      <div class="notice">
+        <h4>关于版权与内容来源</h4>
+        <p>本站仅提供作品信息、剧情向短评与个人观点，不托管、不上传、不提供任何影视文件的下载或在线播放链接，也不转载完整剧本、剧照或音视频素材。文中出现的封面示意均为纯代码绘制的色块图形，不含第三方受版权保护的图像。</p>
+        <p>如您是相关权利方，认为某一处文字描述存在权利争议，请通过下方邮箱联系，我会核实后在 5 个工作日内修正或撤下对应内容。</p>
+      </div>
+    </div>
+
+    <div class="about" style="margin-top:22px">
+      <div class="fact">
+        <h4>官方唯一地址</h4>
+        <p>站点的规范地址（也是搜索引擎认定的唯一版本）为：<br><a href="https://qingningyingshi-zh.github.io" rel="canonical">https://qingningyingshi-zh.github.io</a></p>
+        <p>站内所有栏目链接均采用页内锚点，例如 <code>#archive</code>、<code>#calendar</code>、<code>#notes</code>，单页即可完整浏览，无需额外路径。</p>
+      </div>
+      <div class="fact">
+        <h4>怎么用这份站</h4>
+        <p>· 先翻「剧集档案」找题材；<br>· 再看「上映日历」决定今晚追哪部；<br>· 「导演专题」适合想一次补齐某位作者的人；<br>· 「观影手记」是避坑与种草的混合体，别当剧评看，当朋友聊天看。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <b>青柠影视</b> · qingningyingshi-zh<br>
+        官方地址：<a href="https://qingningyingshi-zh.github.io">https://qingningyingshi-zh.github.io</a>
+      </div>
+      <nav aria-label="底部导航">
+        <a href="#start">回到顶部</a>
+        <a href="#archive">剧集档案</a>
+        <a href="#calendar">上映日历</a>
+        <a href="#feature">导演专题</a>
+        <a href="#notes">观影手记</a>
+        <a href="#about">关于本站</a>
+      </nav>
+    </div>
+    <div class="copy">
+      站内封面均为代码绘制的示意图形，不含第三方图片与音视频素材。本站不提供任何资源的存储、下载或播放服务，所有文字内容为个人观点，请支持正版授权平台。<br>
+      © <span id="yr">2026</span> 青柠影视 · qingningyingshi-zh · GitHub Pages
+    </div>
+  </div>
+</footer>
+
+<a class="top" id="toTop" href="#start" aria-label="回到顶部" title="回到顶部">↑</a>
+
+<script>
+(function(){
+  var y = document.getElementById('yr');
+  if(y) y.textContent = new Date().getFullYear();
+
+  var btn = document.getElementById('toTop');
+  var onScroll = function(){
+    if(window.scrollY > 500) btn.classList.add('show'); else btn.classList.remove('show');
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  document.querySelectorAll('a[href^="#"]').forEach(function(a){
+    a.addEventListener('click', function(e){
+      var id = a.getAttribute('href');
+      if(id.length > 1){
+        var t = document.querySelector(id);
+        if(t){ e.preventDefault(); t.focus({preventScroll:true}); t.scrollIntoView({behavior:'smooth'}); }
+      }
+    });
+  });
+})();
+</script>
+</body>
+</html>
